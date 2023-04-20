@@ -1,0 +1,6 @@
+framework module Pods_Verregular {
+  umbrella header "Pods-Verregular-umbrella.h"
+
+  export *
+  module * { export * }
+}
