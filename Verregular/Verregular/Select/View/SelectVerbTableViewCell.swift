@@ -92,7 +92,7 @@ final class SelectVerbTableViewCell: UITableViewCell {
         pastSimpleLabel.text = verb.pastSimple
         participleLabel.text = verb.participle
         
-        checkboxImageView.image = isSelected ? State.select.image : State.unselect.image
+        checkboxImageView.image = verb.selected ? State.select.image : State.unselect.image
     }
     
     // MARK: - Private methods

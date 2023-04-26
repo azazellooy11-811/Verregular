@@ -16,7 +16,6 @@ final class IrregularVerbs {
     }
     
     // MARK: - Properties
-    var selectedVerbs: [Verb] = []
     private(set) var verbs: [Verb] = []
     
     // MARK: - Methods
@@ -26,5 +25,9 @@ final class IrregularVerbs {
             Verb(infinitive: "can", pastSimple: "could", participle: "could"),
             Verb(infinitive: "do", pastSimple: "did", participle: "done")
         ]
+    }
+    
+    public func toggleSelected(index: IndexPath) {
+        verbs[index.row].selected = !verbs[index.row].selected
     }
 }

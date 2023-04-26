@@ -89,7 +89,7 @@ final class TrainVerbsViewController: UIViewController {
     
     // MARK: - Properties
     private let edgeInsets = 30
-    private var dataSource = IrregularVerbs.shared.selectedVerbs
+    private var dataSource: [Verb] = []
     private var currentVerb: Verb? {
         guard dataSource.count > count else { return nil }
         return dataSource[count]
@@ -114,10 +114,12 @@ final class TrainVerbsViewController: UIViewController {
         setupUI()
         
         hideKeyboardWhenTappedAround()
-        
-        if dataSource.isEmpty {
-            dataSource = IrregularVerbs.shared.verbs
+        dataSource = IrregularVerbs.shared.verbs.filter { verb in
+            verb.selected
         }
+//        if dataSource.isEmpty {
+//            dataSource = IrregularVerbs.shared.verbs
+//        }
         infinitiveLabel.text = dataSource.first?.infinitive
         
     }
@@ -225,6 +227,16 @@ extension TrainVerbsViewController: UITextFieldDelegate {
             scrollView.endEditing(true)
         }
         
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if !checkAnswers() && checkButton.backgroundColor == .red {
+            pastSimpleTextField.text?.removeAll()
+            participleTextField.text?.removeAll()
+            checkButton.setTitle("Check", for: .normal)
+            checkButton.backgroundColor = .gray
+        }
         return true
     }
 }
