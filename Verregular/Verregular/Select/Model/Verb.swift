@@ -14,4 +14,5 @@ struct Verb {
     var translation: String {
         NSLocalizedString(self.infinitive, comment: "")
     }
+    var selected: Bool = true
 }

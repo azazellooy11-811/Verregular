@@ -1,11 +1,13 @@
-/* 
+/*
   Localizable.strings
   Verregular
 
   Created by Азалия Халилова on 19.04.2023.
   
 */
-
+"Congratulations!" = "Поздравляю!";
+"You answered verbs correctly" = "Ты правильно ответил на глаголов";
 "Select verbs" = "Выбрать глаголы";
 "Train verbs" = "Тренировать глаголы";
 "blow" = "дуть";
+"Check" = "Проверить";
